@@ -10,6 +10,7 @@
 - [📖 Budget App ](#-rails-react-hello-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -48,6 +49,13 @@ In order to run this project you need:
 - Ruby
 - Rails
 - Bundle gem
+
+### Key Features <a name="key-features"></a>
+
+- [ ] **Setup Webpack**
+- [ ] **Rails and React**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
 

@@ -1,13 +1,18 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Greeting from './Greeting';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from '../store'
+import Greetings from './Greeting'
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-          <Route index element={<Greeting />} />
-      </Routes>
-  </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Greetings />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

@@ -1,47 +1,25 @@
-import React, { useEffect, useReducer } from 'react';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect} from 'react';
+import { fetchGreeting } from "../reducers/greetingReducer";
 
-const initialState = {
-  message: ' '
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'setGreeting':
-      return { ...state, message: action.payload };
-    default:
-      throw new Error(); 
-  }
-};
-
-function fetch_greeting() {
-  return fetch('http://[::1]:3000/api/greetings/random')
-    .then(response => response.json())
-    .then(data => data.message);
-}
-
-const Greeting = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+function Greetings() {
+  const dispatch = useDispatch();
+  const { greeting } = useSelector(state => state.greeting);
 
   useEffect(() => {
-
-    fetch_greeting().then(message => {
-      dispatch({ type: 'setGreeting', payload: message });
-    });
-    console.log(state.message)
+    dispatch(fetchGreeting())
   }, []);
 
   return (
     <div>
-          {(() => {
-      if (state.message.length === 0) {
-        return <h2>Hello world</h2>;
-      } else {
-        return <h1>Greeting message: {state.message}</h1>;
-      }
-    })()}
-    </div>  
-  );
-};
+      <div>
+      <h1>Random Greeting:</h1>
+      <h2>Greeting form API: {greeting}</h2>
+      <p> Please Refresh to get new greeting</p>
+      </div>
+    </div>
+  )
+}
 
-export default Greeting;
+export default Greetings;

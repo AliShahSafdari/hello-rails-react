@@ -1,7 +1,10 @@
-<a name="readme-top"></a>
+<div align="center">
+<img src= "Logo.png">
+</div>
+
 
 <div align="center">
-  <h3><b>Ruby on Rails and React Hellow </b></h3>
+  <h3><b>Ruby on Rails and React Hello </b></h3>
 </div>
 
 # 📗 Table of Contents
